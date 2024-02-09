@@ -1,4 +1,11 @@
-package com.esec.u2ftoken;
+/**
+ * @file  U2FToken.java
+ * @Loyalty Card Applet Sample Code
+ * @copyright Copyright(C) 2016 JavaCardOS Technologies Co., Ltd. All rights reserved.
+ * www.javacardos.com
+ */
+
+package U2FToken;
 
 import javacard.framework.APDU;
 import javacard.framework.Applet;

@@ -1,4 +1,4 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.framework.APDU;
 import javacard.framework.ISO7816;
@@ -13,33 +13,33 @@ import javacardx.crypto.Cipher;
 
 /** 
  * @author Yang Zhou 
- * @version ´´½¨Ê±¼ä£º2015-12-10 ÏÂÎç06:51:23 
- * ÓëÃÜÔ¿Ïà¹ØµÄ²Ù×÷ºÍÊý¾Ý·â×°Àà
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015-12-10 ï¿½ï¿½ï¿½ï¿½06:51:23 
+ * ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ØµÄ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý·ï¿½×°ï¿½ï¿½
  */
 public class SecretKeys {
 	
-	public static final byte MODE_ENCRYPT = 0x01; // ¼ÓÃÜÄ£Ê½
-	public static final byte MODE_DECRYPT = 0x02; // ½âÃÜÄ£Ê½
+	public static final byte MODE_ENCRYPT = 0x01; // ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+	public static final byte MODE_DECRYPT = 0x02; // ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 	
-	public static final byte KEY_TYPE_AES = 0x01; // ±¾Ê¾Àý±£´æµÄÊÇAESÃÜÔ¿
-	public static final byte KEY_TYPE_DES = 0x02; // ±¾Ê¾Àý±£´æµÄÊÇDESÃÜÔ¿
+	public static final byte KEY_TYPE_AES = 0x01; // ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AESï¿½ï¿½Ô¿
+	public static final byte KEY_TYPE_DES = 0x02; // ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DESï¿½ï¿½Ô¿
 	
 //	private byte mKeyType = 0x00;
 	
 	/**
-	 * ÃÜÔ¿µÄÊµÌå£¬DES
+	 * ï¿½ï¿½Ô¿ï¿½ï¿½Êµï¿½å£¬DES
 	 */
 //	private DESKey mDESKeyInstance = null;
 	
 	/**
-	 * ÃÜÔ¿µÄÊµÌå£¬AES
+	 * ï¿½ï¿½Ô¿ï¿½ï¿½Êµï¿½å£¬AES
 	 */
 	private AESKey mAESKeyInstance = null;
 	
 	/**
-	 * ³õÊ¼»¯key wrapËã·¨µÄÃÜÔ¿
-	 * ²ÉÓÃAES-256£¬Éú³ÉµÄAESÃÜÔ¿ÓÐ256Î»
-	 * ²ÉÓÃDES3-2KEY£¬Éú³ÉµÄDESÃÜÔ¿ÓÐ128Î»
+	 * ï¿½ï¿½Ê¼ï¿½ï¿½key wrapï¿½ã·¨ï¿½ï¿½ï¿½ï¿½Ô¿
+	 * ï¿½ï¿½ï¿½ï¿½AES-256ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½AESï¿½ï¿½Ô¿ï¿½ï¿½256Î»
+	 * ï¿½ï¿½ï¿½ï¿½DES3-2KEYï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½DESï¿½ï¿½Ô¿ï¿½ï¿½128Î»
 	 */
 	public SecretKeys(byte keyType) {
 //		mKeyType = keyType;
@@ -51,7 +51,7 @@ public class SecretKeys {
 //			mDESKeyInstance.setKey(keyData, (short) 0);
 //		} else if (mKeyType == KEY_TYPE_AES) {
 			try {
-				// TODO ÕâÀïÓÐµãÎÊÌâ£¬Ã»ÓÐÕâ¸öËã·¨£¿
+				// TODO ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½â£¬Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½
 				mAESKeyInstance = (AESKey) KeyBuilder.buildKey(KeyBuilder.TYPE_AES, KeyBuilder.LENGTH_AES_128, false);
 			} catch(CryptoException e) {
 //				ISOException.throwIt(JCSystem.getVersion());
@@ -60,7 +60,7 @@ public class SecretKeys {
 			}
 //			mAESKeyInstance = (AESKey) KeyBuilder.buildKey(KeyBuilder.TYPE_AES, KeyBuilder.LENGTH_AES_128, false);
 //			ISOException.throwIt(ISO7816.SW_WRONG_DATA);
-			// TODO ÊÇ²»ÊÇÕâÀïÓÐ´í£¿£¿£¿£¿£¿AES-256Ó¦¸ÃÊÇ32×Ö½Ú£¿£¿
+			// TODO ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AES-256Ó¦ï¿½ï¿½ï¿½ï¿½32ï¿½Ö½Ú£ï¿½ï¿½ï¿½
 			byte[] keyData = JCSystem.makeTransientByteArray((short) 16, JCSystem.CLEAR_ON_DESELECT);
 			Util.arrayFillNonAtomic(keyData, (short) 0, (short) keyData.length, (byte) 0x00);
 			mAESKeyInstance.setKey(keyData, (short) 0);
@@ -71,35 +71,35 @@ public class SecretKeys {
 	}
 	
 	/**
-	 * key wrapËã·¨£¬ÕâÀï²ÉÓÃ AES-256 µÄ ALG_AES_BLOCK_128_CBC_NOPAD
-	 * @param data ÐèÒª wrap µÄÊý¾Ý
+	 * key wrapï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ AES-256 ï¿½ï¿½ ALG_AES_BLOCK_128_CBC_NOPAD
+	 * @param data ï¿½ï¿½Òª wrap ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param inOffset
 	 * @param inLength
 	 * @param outBuff
 	 * @param outOffset
-	 * @param mode ¼ÓÃÜ»ò½âÃÜ¡£ Cipher.MODE_ENCRYPT »ò Cipher.MODE_DECRYPT
+	 * @param mode ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½Ü¡ï¿½ Cipher.MODE_ENCRYPT ï¿½ï¿½ Cipher.MODE_DECRYPT
 	 */
 	public void keyWrap(byte[] data, short inOffset, short inLength, byte[] buffer, short outOffset, byte mode) {
 		Cipher cipher = null;
 //		if (mKeyType == KEY_TYPE_DES) {
 ////			cipher = Cipher.getInstance(Cipher.ALG_DES_ECB_NOPAD, false);
 //			cipher = Cipher.getInstance(Cipher.ALG_DES_CBC_ISO9797_M2, false);
-//			cipher.init(mDESKeyInstance, mode); // ³õÊ¼ÏòÁ¿(iv)ÊÇ0
+//			cipher.init(mDESKeyInstance, mode); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½(iv)ï¿½ï¿½0
 //		} else if (mKeyType == KEY_TYPE_AES) {
 //			cipher = Cipher.getInstance(Cipher.ALG_AES_BLOCK_128_CBC_NOPAD, false);
 //			ISOException.throwIt(ISO7816.SW_WRONG_DATA);
 			try {
-				// Cipher.getInstanceÔÚÕâÀï¹ý²»ÁË£¬ÔÚU2FTokenÀïÄÜ¹ý£¿£¿£¿
+				// Cipher.getInstanceï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½U2FTokenï¿½ï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				cipher = Cipher.getInstance(Cipher.ALG_AES_BLOCK_128_ECB_NOPAD, false);
 			} catch (CryptoException e) {
 				ISOException.throwIt(JCSystem.getVersion());
 				short reason = e.getReason();
 				ISOException.throwIt(reason);
 			}
-			cipher.init(mAESKeyInstance, mode); // ³õÊ¼ÏòÁ¿(iv)ÊÇ0
+			cipher.init(mAESKeyInstance, mode); // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½(iv)ï¿½ï¿½0
 //		}
 		
-		// ¼ÓÃÜ»ò½âÃÜ£¬doFinalºó£¬cipher¶ÔÏó½«±»ÖØÖÃ
+		// ï¿½ï¿½ï¿½Ü»ï¿½ï¿½ï¿½Ü£ï¿½doFinalï¿½ï¿½cipherï¿½ï¿½ï¿½ó½«±ï¿½ï¿½ï¿½ï¿½ï¿½
 		try {
 			cipher.doFinal(data, inOffset, inLength, buffer, outOffset);
 		} catch(Exception e) {

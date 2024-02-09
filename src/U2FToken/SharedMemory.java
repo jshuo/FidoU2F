@@ -1,10 +1,10 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.framework.JCSystem;
 
 /** 
  * @author Yang Zhou 
- * @version ´´½¨Ê±¼ä£º2015-12-23 ÉÏÎç11:18:14 
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015-12-23 ï¿½ï¿½ï¿½ï¿½11:18:14 
  * Some transient memory which can be reused.
  */
 public class SharedMemory {

@@ -1,4 +1,4 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.security.ECPrivateKey;
 import javacard.security.PrivateKey;

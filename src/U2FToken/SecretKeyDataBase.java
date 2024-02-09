@@ -1,4 +1,4 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.framework.ISO7816;
 import javacard.framework.ISOException;
@@ -7,7 +7,7 @@ import javacard.security.PrivateKey;
 
 /** 
  * @author Yang Zhou 
- * @version ´´½¨Ê±¼ä£º2015-12-23 ÏÂÎç07:55:49 
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015-12-23 ï¿½ï¿½ï¿½ï¿½07:55:49 
  * Store user's ECC private key, initially can store 30 keys.
  */
 public class SecretKeyDataBase {

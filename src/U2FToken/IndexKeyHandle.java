@@ -1,4 +1,4 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.framework.Util;
 import javacard.security.ECPrivateKey;
@@ -7,7 +7,7 @@ import javacard.security.PrivateKey;
 /** 
  * Key handle is a index to user's private key stored locally. 
  * @author Yang Zhou 
- * @version ´´½¨Ê±¼ä£º2015-12-23 ÏÂÎç08:38:19 
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015-12-23 ï¿½ï¿½ï¿½ï¿½08:38:19 
  */
 public class IndexKeyHandle implements KeyHandleGenerator {
 

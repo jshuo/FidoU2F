@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.security.ECKey;
 import javacard.security.ECPrivateKey;
@@ -12,8 +12,8 @@ import javacard.security.PrivateKey;
 
 /** 
  * @author Yang Zhou 
- * @version 创建时间：2015-12-10 上午10:00:46 
- * secp256r1的参数初始化封装类，参数来自bouncycastle的java实现
+ * @version 锟斤拷锟斤拷时锟戒：2015-12-10 锟斤拷锟斤拷10:00:46 
+ * secp256r1锟侥诧拷锟斤拷锟斤拷始锟斤拷锟斤拷装锟洁，锟斤拷锟斤拷锟斤拷锟斤拷bouncycastle锟斤拷java实锟斤拷
  */
 public class SecP256r1 {
 	

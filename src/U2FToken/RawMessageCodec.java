@@ -1,11 +1,11 @@
-package com.esec.u2ftoken;
+package U2FToken;
 
 import javacard.framework.JCSystem;
 import javacard.framework.Util;
 
 /** 
  * @author Yang Zhou 
- * @version ´´½¨Ê±¼ä£º2015-12-23 ÏÂÎç04:15:44 
+ * @version ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º2015-12-23 ï¿½ï¿½ï¿½ï¿½04:15:44 
  * Raw Message Formats
  */
 public class RawMessageCodec {
